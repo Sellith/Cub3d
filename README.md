@@ -55,11 +55,9 @@ L’exécutable généré dans le dossier bin et sera typiquement nommé :
 
 		bin/cub3D map.cub
 
-## Régles du Makefile :
+## Règles du Makefile :
 
 Le makefile a été confectionné de sorte que presque tout peut-etre contrôlé à partir de ses règles :
-
-é è à
 
 ### Règles générales
 
