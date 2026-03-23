@@ -1,35 +1,35 @@
-# Cub3D
+# 🎮 Cub3D
 
-## 1. Introduction
+## 💡 1. Introduction
 
-Cub3D est un projet de l’école 42 qui consiste à réaliser un moteur de pseudo 3D minimaliste en ray-casting, inspiré du jeu Wolfenstein 3D, à partir d’une carte 2D en utilisant la librairie graphique MiniLibX.
+Cub3D est un projet de l’école 42 qui consiste à réaliser un moteur de pseudo 3D minimaliste en ray-casting, inspiré du jeu Wolfenstein 3D, à partir d’une map 2D en utilisant la librairie graphique MiniLibX.
 
-## 2. Objectifs
+## 🎯 2. Objectifs
 
-- Afficher un environnement pseudo 3D interactif à partir d’une carte 2D au format .cub.
+- Afficher un environnement pseudo 3D interactif à partir d’une map 2D au format .cub.
 - Permettre les déplacements du joueur (avancer, reculer, strafe, rotation).
 - Charger et valider les textures et couleurs définies dans le fichier .cub.
 - Respecter les contraintes du sujet Cub3D de 42 (gestion d’erreurs, leaks, norme, etc.).
 
-## 3. Objectifs bonus
+## 📌 3. Objectifs bonus
 
-- Gérer les collisions avec les murs et les limites de la carte.​
+- Gérer les collisions avec les murs et les limites de la map.​
 - Création d'une minimap 
 - Permettre les déplacement de la rotation de la caméra avec la souris.
 - Gérer les sprites animées.
 - Implémenter un système de portes.
 
-## 4. Fonctionnalités réalisées
+## ✨ 4. Fonctionnalités réalisées
 
-- Parsing des parametres, de la map et gestion des erreurs : fichier manquant, carte invalide, textures introuvables, paramètres incorrects.
+- Parsing des parametres, de la map et gestion des erreurs : fichier manquant, map invalide, textures introuvables, paramètres incorrects.
 - Rendu 3D basique par ray-casting.
 - Support des textures .xpm pour les différants orientations des murs (Nord, Sud, Est, Ouest).
 - Couleurs configurables pour le sol et le plafond (RGB).​
 - Déplacement fluide du joueur dans le labyrinthe par clavier. (et souris en bonus)
-- Minimap pour visualiser la carte 2D et la position du joueur.​ (bonus)
+- Minimap pour visualiser la map 2D et la position du joueur.​ (bonus)
 - Système de porte, ouverte par pressions d'une touche (F) avec une animation pour chaques ouvertures et fermetures. (bonus)
 
-## 5. Prérequis
+## 📜 5. Prérequis
 
 - OS : Linux.
 - gcc
@@ -39,7 +39,7 @@ Cub3D est un projet de l’école 42 qui consiste à réaliser un moteur de pseu
 - Utility functions from BSD systems - development files (package libbsd-dev)
 - **e.g. sudo apt-get install gcc make xorg libxext-dev libbsd-dev (Debian/Ubuntu)**
 
-## 6. Installation
+## 🤖 6. Installation
 
 ### Cloner le dépôt :
 
@@ -52,13 +52,13 @@ Depuis la racine du projet :
 
 	make
 
-La règle "all" du Makefile permet le clonage et la compilation de la MiniLibX, et de la libft les fichiers ".a" seront automatiquement copiés dans le dossier bin/archives/ situé à la racine du projet.
+La règle "all" du Makefile permet le clonage et la compilation de la MiniLibX, et de la libft les fichiers binaires seront automatiquement copiés dans le dossier bin/archives/ situé à la racine du projet.
 
-L’exécutable généré dans le dossier bin et sera typiquement nommé :
+L’exécutable généré dans le dossier bin/ et sera typiquement nommé :
 
-	bin/cub3D map.cub
+	bin/cub3D
 
-## 7. Règles du Makefile :
+## ⚙️ 7. Règles du Makefile :
 
 Le makefile a été confectionné de sorte que presque tout peut-etre contrôlé à partir de ses règles :
 
@@ -93,9 +93,11 @@ Le makefile a été confectionné de sorte que presque tout peut-etre contrôlé
 
 - normy : Lance la norminette avec les flags et fait un diff.
 
-## 8. Utilisation
+## 💎 8. Utilisation
 
-### Exemple d’exécution avec une carte :
+Cub3d doit etre executé avec comme argument une map valide.
+
+### Exemple d’exécution avec une map :
 
 	bin/cub3D maps/big_maze.cub
 
@@ -109,7 +111,11 @@ Le makefile a été confectionné de sorte que presque tout peut-etre contrôlé
 - F : ouvrir les portes.
 - E : mode debug.
 
-## 9. Format des cartes .cub
+## 🤝 9. Format valide des maps
+
+Une map valide est en format .cub
+
+> il est important de respecter un modele précis pour que la map soit valide.
 
 ### Un fichier .cub contient généralement :
 
@@ -123,7 +129,7 @@ Le makefile a été confectionné de sorte que presque tout peut-etre contrôlé
 	- F R,G,B
 	- C R,G,B
 
-- La carte 2D fermée, utilisant par exemple :
+- La map 2D fermée, utilisant par exemple :
 	- 1 pour les murs
 	- 0 pour l’espace vide
 	- N / S / E / W pour la position et l’orientation initiale du joueur
@@ -143,7 +149,7 @@ Le makefile a été confectionné de sorte que presque tout peut-etre contrôlé
 	1000N1
 	111111
 
-1## 0. Structure du projet
+## 🤔 10. Structure du projet
 
 	Minishell/
 	├── Dependencies	   # Contient ma libft ameliorée et la MiniLibX
@@ -162,13 +168,9 @@ Le makefile a été confectionné de sorte que presque tout peut-etre contrôlé
 	├── Makefile
 	└── README.md
 
-1## 1. Ray-casting en bref
-
-Le ray-casting consiste à lancer un rayon pour chaque colonne de l’écran, à travers la carte 2D, jusqu’à toucher un mur, puis à calculer la hauteur de la colonne de mur à afficher en fonction de la distance.
-Cela permet de créer l’illusion d’un environnement 3D à partir d’une simple grille 2D.
-
-1## 2. Améliorations possibles
+## 📩 11. Améliorations possibles
 
 - Optimisation des performances lorsque les portes sont ouvertes.
+- Ajout d'un objectif, d'ennemis, 
 - Ajout d’animations, de sprites et d’objets interactifs.
 - Ajout d'un menu de jeux / menu pause avec parametrage de la taille de l'écran et les touches du client.
