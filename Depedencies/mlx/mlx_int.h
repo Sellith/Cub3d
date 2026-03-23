@@ -30,7 +30,6 @@
 # include <sys/shm.h>
 # include <X11/extensions/XShm.h>
 # include <X11/XKBlib.h>
-# include <X11/extensions/Xfixes.h>
 /* #include	<X11/xpm.h> */
 
 

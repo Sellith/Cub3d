@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lvan-bre <lvan-bre@student.42lehavre.fr    +#+  +:+       +#+         #
+#    By: leane <leane@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/08 01:08:11 by lvan-bre          #+#    #+#              #
-#    Updated: 2025/09/13 16:09:16 by lvan-bre         ###   ########.fr        #
+#    Updated: 2026/03/23 18:38:04 by leane            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -119,6 +119,10 @@ fclean: clean
 
 re:	fclean all
 
+mkdep:
+	@cp $(LIBFT_H_PATH) $(INC_DIR)
+	@$(MAKE) -C $(LIBFT_PATH) --no-print-directory
+
 cleandep:
 	@$(MAKE) clean -C $(LIBFT_PATH) --no-print-directory
 
@@ -176,8 +180,12 @@ udlib: fcleandep rmlibft libft redep
 $(NAME):	$(OBJS)
 	@printf "$(ERS_STR)$(CLR_BLUE)\tSource files:\t$(CLR_GRN)Compilation succeded !$(CLR_RESET)\n"
 	@mkdir -p $(@D)
+	@printf "$(CLR_BLUE)\t\tCompiling Libft ~$(CLR_RESET)"
 	@$(MAKE) -C $(LIBFT_PATH) --no-print-directory
+	@printf "$(ERS_STR)$(ERS_STR)"
+	@printf "$(CLR_BLUE)\t\tCompiling minilibx ~$(CLR_RESET)"
 	@$(MAKE) -C $(MLX_PATH) --no-print-directory > /dev/null 2>&1
+	@printf "$(ERS_STR)$(CLR_BLUE)\tMiniLibX:\t$(CLR_GRN)Compilation succeded !$(CLR_RESET)\n"
 	@mkdir -p $(ARCH)
 	@cp $(MLX_H_PATH) $(INC_DIR)
 	@cp $(MLX_TARGET_PATH) $(ARCH)
