@@ -58,6 +58,8 @@ L’exécutable généré dans le dossier bin/ et sera typiquement nommé :
 
 	bin/cub3D
 
+![cub3d_compilation](./cub3d_compilation.gif)
+
 ## ⚙️ 7. Règles du Makefile :
 
 Le makefile a été confectionné de sorte que presque tout peut-etre contrôlé à partir de ses règles :
@@ -94,6 +96,8 @@ Le makefile a été confectionné de sorte que presque tout peut-etre contrôlé
 - normy : Lance la norminette avec les flags et fait un diff.
 
 ## 💎 8. Utilisation
+
+![cub3d_utilisation](./cub3d_gameplay.gif)
 
 Cub3d doit etre executé avec comme argument une map valide.
 
@@ -135,7 +139,6 @@ Une map valide est en format .cub
 	- N / S / E / W pour la position et l’orientation initiale du joueur
 
 ### Exemple minimal :
-
 
 	NO textures/north.xpm
 	SO textures/south.xpm
