@@ -1,17 +1,17 @@
 # Cub3D
 
-1. ## Introduction
+## 1. Introduction
 
 Cub3D est un projet de l’école 42 qui consiste à réaliser un moteur de pseudo 3D minimaliste en ray-casting, inspiré du jeu Wolfenstein 3D, à partir d’une carte 2D en utilisant la librairie graphique MiniLibX.
 
-2. ## Objectifs
+## 2. Objectifs
 
 - Afficher un environnement pseudo 3D interactif à partir d’une carte 2D au format .cub.
 - Permettre les déplacements du joueur (avancer, reculer, strafe, rotation).
 - Charger et valider les textures et couleurs définies dans le fichier .cub.
 - Respecter les contraintes du sujet Cub3D de 42 (gestion d’erreurs, leaks, norme, etc.).
 
-3. ## Objectifs bonus
+## 3. Objectifs bonus
 
 - Gérer les collisions avec les murs et les limites de la carte.​
 - Création d'une minimap 
@@ -19,7 +19,7 @@ Cub3D est un projet de l’école 42 qui consiste à réaliser un moteur de pseu
 - Gérer les sprites animées.
 - Implémenter un système de portes.
 
-4. ## Fonctionnalités réalisées
+## 4. Fonctionnalités réalisées
 
 - Parsing des parametres, de la map et gestion des erreurs : fichier manquant, carte invalide, textures introuvables, paramètres incorrects.
 - Rendu 3D basique par ray-casting.
@@ -29,7 +29,7 @@ Cub3D est un projet de l’école 42 qui consiste à réaliser un moteur de pseu
 - Minimap pour visualiser la carte 2D et la position du joueur.​ (bonus)
 - Système de porte, ouverte par pressions d'une touche (F) avec une animation pour chaques ouvertures et fermetures. (bonus)
 
-5. ## Prérequis
+## 5. Prérequis
 
 - OS : Linux.
 - gcc
@@ -39,7 +39,7 @@ Cub3D est un projet de l’école 42 qui consiste à réaliser un moteur de pseu
 - Utility functions from BSD systems - development files (package libbsd-dev)
 - **e.g. sudo apt-get install gcc make xorg libxext-dev libbsd-dev (Debian/Ubuntu)**
 
-6. ## Installation
+## 6. Installation
 
 ### Cloner le dépôt :
 
@@ -58,7 +58,7 @@ L’exécutable généré dans le dossier bin et sera typiquement nommé :
 
 	bin/cub3D map.cub
 
-7. ## Règles du Makefile :
+## 7. Règles du Makefile :
 
 Le makefile a été confectionné de sorte que presque tout peut-etre contrôlé à partir de ses règles :
 
@@ -93,7 +93,7 @@ Le makefile a été confectionné de sorte que presque tout peut-etre contrôlé
 
 - normy : Lance la norminette avec les flags et fait un diff.
 
-8. ## Utilisation
+## 8. Utilisation
 
 ### Exemple d’exécution avec une carte :
 
@@ -109,7 +109,7 @@ Le makefile a été confectionné de sorte que presque tout peut-etre contrôlé
 - F : ouvrir les portes.
 - E : mode debug.
 
-9. ## Format des cartes .cub
+## 9. Format des cartes .cub
 
 ### Un fichier .cub contient généralement :
 
@@ -143,7 +143,7 @@ Le makefile a été confectionné de sorte que presque tout peut-etre contrôlé
 	1000N1
 	111111
 
-10. ## Structure du projet
+1## 0. Structure du projet
 
 	Minishell/
 	├── Dependencies	   # Contient ma libft ameliorée et la MiniLibX
@@ -162,12 +162,12 @@ Le makefile a été confectionné de sorte que presque tout peut-etre contrôlé
 	├── Makefile
 	└── README.md
 
-11. ## Ray-casting en bref
+1## 1. Ray-casting en bref
 
 Le ray-casting consiste à lancer un rayon pour chaque colonne de l’écran, à travers la carte 2D, jusqu’à toucher un mur, puis à calculer la hauteur de la colonne de mur à afficher en fonction de la distance.
 Cela permet de créer l’illusion d’un environnement 3D à partir d’une simple grille 2D.
 
-12. ## Améliorations possibles
+1## 2. Améliorations possibles
 
 - Optimisation des performances lorsque les portes sont ouvertes.
 - Ajout d’animations, de sprites et d’objets interactifs.
